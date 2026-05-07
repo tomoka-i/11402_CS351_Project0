@@ -12,7 +12,7 @@ static int failed_tests = 0;
 
 static void printVector(const std::vector<int>& vec) {
     std::cout << "[";
-    for (size_t i = 0; i < vec.size(); ++i) {
+    for (std::size_t i = 0; i < vec.size(); ++i) {
         std::cout << vec[i] << (i + 1 == vec.size() ? "" : ", ");
     }
     std::cout << "]";
@@ -54,7 +54,7 @@ static bool isValidPairResult(const std::vector<int>& res, const std::vector<int
     int a = res[0];
     int b = res[1];
     if (a < 0 || b < 0) return false;
-    if ((size_t)a >= nums.size() || (size_t)b >= nums.size()) return false;
+    if ((std::size_t)a >= nums.size() || (std::size_t)b >= nums.size()) return false;
     if (a == b) return false;
     return nums[a] + nums[b] == target;
 }
